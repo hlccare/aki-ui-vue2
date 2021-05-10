@@ -1,6 +1,9 @@
 <template>
   <div class="home">
-    <Button>123</Button>
+    <Button>按钮</Button>
+    <Button icon="setting">按钮</Button>
+    <Button icon="setting" iconPosition="right">按钮</Button>
+
   </div>
 </template>
 
