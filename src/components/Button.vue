@@ -1,7 +1,11 @@
 <template>
-  <button class="aki-button" :class="{ [`icon-${iconPosition}`]: true }">
-    <Icon v-if="icon" :name="icon" />
-    <Icon name="loading" class="loading" />
+  <button
+    @click="$emit('click')"
+    class="aki-button"
+    :class="{ [`icon-${iconPosition}`]: true }"
+  >
+    <Icon v-if="loading" iconName="loading" class="loading" />
+    <Icon v-if="icon && !loading" :iconName="icon" />
     <span class="content">
       <slot />
     </span>
@@ -26,6 +30,9 @@ export default class Button extends Vue {
     },
   })
   iconPosition?: "left" | "right";
+  @Prop({ type: Boolean, default: false })
+  loading?: boolean;
+  name = "AkiButton";
 }
 </script>
 
@@ -66,22 +73,22 @@ $button-border-radius: 4px;
     outline: none;
   }
   > .aki-icon {
-    order: 1;
+    order: 2;
     margin-right: 0.1em;
   }
   > .content {
-    order: 2;
+    order: 3;
   }
   &.icon-right {
     > .aki-icon {
-      order: 2;
+      order: 3;
       margin-left: 0.1em;
     }
     > .content {
-      order: 1;
+      order: 2;
     }
   }
-  .loading {
+  > .loading.aki-icon {
     animation: spin 1s linear infinite;
   }
 }

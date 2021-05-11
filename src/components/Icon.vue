@@ -1,6 +1,6 @@
 <template>
   <svg class="aki-icon" aria-hidden="true">
-    <use :xlink:href="`#icon-${name}`"></use>
+    <use :xlink:href="`#icon-${iconName}`"></use>
   </svg>
 </template>
 
@@ -9,7 +9,8 @@ import { Component, Prop, Vue } from "vue-property-decorator";
 
 @Component
 export default class extends Vue {
-  @Prop({ required: true }) name?: string;
+  name = "AkiIcon";
+  @Prop({ required: true }) iconName?: string;
 }
 </script>
 
