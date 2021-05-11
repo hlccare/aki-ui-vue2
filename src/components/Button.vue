@@ -1,27 +1,30 @@
 <template>
-  <button class="aki-button" :class="{[`icon-${iconPosition}`]:true}">
-    <svg class="icon" aria-hidden="true" v-if="icon">
-      <use :xlink:href="`#icon-${icon}`"></use>
-    </svg>
+  <button class="aki-button" :class="{ [`icon-${iconPosition}`]: true }">
+    <Icon v-if="icon" :name="icon" />
     <span class="content">
-    <slot />
+      <slot />
     </span>
   </button>
-  
 </template>
 
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
-
-@Component
+import Icon from "@/components/Icon.vue";
+@Component({
+  components: {
+    Icon,
+  },
+})
 export default class Button extends Vue {
   @Prop() icon?: string;
   @Prop({
-    default:'left',
+    default: "left",
     type: String,
-    validator:value=>{
-      return value==='left'|| value==='right'
-  }}) iconPosition?:'left'|'right';
+    validator: (value) => {
+      return value === "left" || value === "right";
+    },
+  })
+  iconPosition?: "left" | "right";
 }
 </script>
 
@@ -53,19 +56,19 @@ $button-border-radius: 4px;
   &:focus {
     outline: none;
   }
-  > .icon{
+  > .aki-icon {
     order: 1;
-    margin-right: .1em;
+    margin-right: 0.1em;
   }
-  >.content{
+  > .content {
     order: 2;
   }
-  &.icon-right{
-    > .icon{
-      order:2;
-      margin-left: .1em;
+  &.icon-right {
+    > .aki-icon {
+      order: 2;
+      margin-left: 0.1em;
     }
-    >.content{
+    > .content {
       order: 1;
     }
   }
