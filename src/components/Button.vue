@@ -1,6 +1,7 @@
 <template>
   <button class="aki-button" :class="{ [`icon-${iconPosition}`]: true }">
     <Icon v-if="icon" :name="icon" />
+    <Icon name="loading" class="loading" />
     <span class="content">
       <slot />
     </span>
@@ -36,6 +37,14 @@ $button-height: 32px;
 $button-bg: white;
 $button-active-bg: #eee;
 $button-border-radius: 4px;
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .aki-button {
   height: $button-height;
   padding: 0 1em;
@@ -71,6 +80,9 @@ $button-border-radius: 4px;
     > .content {
       order: 1;
     }
+  }
+  .loading {
+    animation: spin 1s linear infinite;
   }
 }
 </style>
