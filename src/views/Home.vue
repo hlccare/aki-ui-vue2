@@ -29,7 +29,7 @@
     </div>
 
     <div class="box">
-      <Input value="内容1" />
+      <Input v-model="message" />
       <Input value="内容2" />
       <Input value="禁用" disabled />
       <Input value="只读" readonly />
@@ -54,6 +54,7 @@ export default class Home extends Vue {
       loading2: true,
       loading3: false,
       loading4: false,
+      message: "初始内容",
     };
   }
 }
