@@ -35,25 +35,43 @@
       <Input value="只读" readonly />
       <Input value="错误情况" error="内容不得少于5个字" />
     </div>
-    <div class="box">
-      <Row>
+    <div class="box" style="border: 1px solid black">
+      <Row gutter="20">
         <Col>1</Col>
         <Col>2</Col>
       </Row>
-      <Row>
+      <Row gutter="20">
         <Col>1</Col>
         <Col>2</Col>
         <Col>3</Col>
       </Row>
-      <Row>
+      <Row gutter="20">
         <Col>1</Col>
         <Col>2</Col>
         <Col>3</Col>
         <Col>4</Col>
       </Row>
-      <Row>
-        <Col span="2">2</Col>
-        <Col span="22">22</Col>
+      <Row gutter="20">
+        <Col span="2">1</Col>
+        <Col span="20" offset="2">11</Col>
+      </Row>
+      <Row gutter="20">
+        <Col span="4">1</Col>
+        <Col span="20">11</Col>
+      </Row>
+      <Row gutter="20">
+        <Col span="4">1</Col>
+        <Col span="18" offset="2">11</Col>
+      </Row>
+      <Row gutter="20">
+        <Col span="4">1</Col>
+        <Col span="8" offset="2">11</Col>
+        <Col span="8" offset="2">11</Col>
+      </Row>
+      <Row gutter="20">
+        <Col span="4">1</Col>
+        <Col span="4" offset="6">11</Col>
+        <Col span="8" offset="2">11</Col>
       </Row>
     </div>
   </div>
