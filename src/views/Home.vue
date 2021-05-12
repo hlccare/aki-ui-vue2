@@ -35,6 +35,27 @@
       <Input value="只读" readonly />
       <Input value="错误情况" error="内容不得少于5个字" />
     </div>
+    <div class="box">
+      <Row>
+        <Col>1</Col>
+        <Col>2</Col>
+      </Row>
+      <Row>
+        <Col>1</Col>
+        <Col>2</Col>
+        <Col>3</Col>
+      </Row>
+      <Row>
+        <Col>1</Col>
+        <Col>2</Col>
+        <Col>3</Col>
+        <Col>4</Col>
+      </Row>
+      <Row>
+        <Col span="2">2</Col>
+        <Col span="22">22</Col>
+      </Row>
+    </div>
   </div>
 </template>
 
@@ -43,9 +64,11 @@ import { Component, Vue } from "vue-property-decorator";
 import Button from "@/components/Button.vue";
 import ButtonGroup from "../components/ButtonGroup.vue";
 import Input from "../components/Input.vue";
+import Row from "../components/Row.vue";
+import Col from "../components/Col.vue";
 
 @Component({
-  components: { Button, ButtonGroup, Input },
+  components: { Button, ButtonGroup, Input, Row, Col },
 })
 export default class Home extends Vue {
   data() {
