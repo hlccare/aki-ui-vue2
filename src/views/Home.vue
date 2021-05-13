@@ -36,9 +36,68 @@
       <Input value="错误情况" error="内容不得少于5个字" />
     </div>
     <div class="box" style="border: 1px solid black">
+      <Row>
+        <Col
+          span="24"
+          :ipad="{ span: 12 }"
+          :narrowPc="{ span: 8 }"
+          :pc="{ span: 6 }"
+          :widePc="{ span: 4 }"
+          >1</Col
+        >
+        <Col
+          span="24"
+          :ipad="{ span: 12 }"
+          :narrowPc="{ span: 8 }"
+          :pc="{ span: 6 }"
+          :widePc="{ span: 4 }"
+        ></Col>
+        <Col
+          span="24"
+          :ipad="{ span: 12 }"
+          :narrowPc="{ span: 8 }"
+          :pc="{ span: 6 }"
+          :widePc="{ span: 4 }"
+        ></Col>
+        <Col
+          span="24"
+          :ipad="{ span: 12 }"
+          :narrowPc="{ span: 8 }"
+          :pc="{ span: 6 }"
+          :widePc="{ span: 4 }"
+        ></Col>
+        <Col
+          span="24"
+          :ipad="{ span: 12 }"
+          :narrowPc="{ span: 8 }"
+          :pc="{ span: 6 }"
+          :widePc="{ span: 4 }"
+        ></Col>
+        <Col
+          span="24"
+          :ipad="{ span: 12 }"
+          :narrowPc="{ span: 8 }"
+          :pc="{ span: 6 }"
+          :widePc="{ span: 4 }"
+        ></Col>
+      </Row>
       <Row gutter="20">
-        <Col>1</Col>
-        <Col>2</Col>
+        <Col
+          span="24"
+          :ipad="{ span: 8 }"
+          :narrowPc="{ span: 4 }"
+          :pc="{ span: 2 }"
+          :widePc="{ span: 1 }"
+          >1</Col
+        >
+        <Col
+          span="24"
+          :ipad="{ span: 16 }"
+          :narrowPc="{ span: 20 }"
+          :pc="{ span: 22 }"
+          :widePc="{ span: 23 }"
+          >2</Col
+        >
       </Row>
       <Row gutter="20">
         <Col>1</Col>

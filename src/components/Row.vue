@@ -32,7 +32,7 @@ export default class Row extends Vue {
     return [align && `align-${align}`];
   }
   mounted() {
-    this.$children.forEach((vm) => (vm._gutter = this.gutter));
+    this.$children.forEach((vm) => (vm.colGutter = Number(this.gutter)));
   }
 }
 </script>
@@ -40,6 +40,7 @@ export default class Row extends Vue {
 <style lang='scss' scoped>
 .aki-row {
   display: flex;
+  flex-wrap: wrap;
   &.align-left {
     justify-content: flex-start;
   }
