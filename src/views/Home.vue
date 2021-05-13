@@ -142,11 +142,14 @@
         </Layout>
       </Layout>
     </div>
+    <div class="box">
+      <button @click="showToast">点击</button>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
+import { Component, Vue, Prop } from "vue-property-decorator";
 import Button from "@/components/Button.vue";
 import ButtonGroup from "../components/ButtonGroup.vue";
 import Input from "../components/Input.vue";
@@ -157,6 +160,9 @@ import Header from "../components/Header.vue";
 import Content from "../components/Content.vue";
 import Footer from "../components/Footer.vue";
 import Sider from "../components/Sider.vue";
+import Toast from "../components/Toast.vue";
+import plugin from "../components/plugin";
+Vue.use(plugin);
 
 @Component({
   components: {
@@ -170,6 +176,7 @@ import Sider from "../components/Sider.vue";
     Content,
     Footer,
     Sider,
+    Toast,
   },
 })
 export default class Home extends Vue {
@@ -181,6 +188,17 @@ export default class Home extends Vue {
       loading4: false,
       message: "初始内容",
     };
+  }
+  showToast() {
+    this.$toast("这是message", {
+      closeButton: {
+        text: "关闭",
+        callback(toast: any) {
+          toast.log();
+          console.log("已关闭");
+        },
+      },
+    });
   }
 }
 </script>

@@ -8,5 +8,6 @@ declare module 'vue/types/vue' {
     interface Vue {
         colGutter: string | number | undefined
         name: string | undefined
+        $toast: any
     }
 }
