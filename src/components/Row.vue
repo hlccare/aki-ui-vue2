@@ -14,7 +14,7 @@ export default class Row extends Vue {
   @Prop({
     type: String,
     validator(value) {
-      return ["left", "right", "center"].includes(value);
+      return ["left", "right", "center"].indexOf(value)>=0;
     },
   })
   align?: "left" | "right" | "center";

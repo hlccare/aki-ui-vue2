@@ -191,6 +191,7 @@ export default class Home extends Vue {
   }
   showToast() {
     this.$toast("这是message", {
+      position: "middle",
       closeButton: {
         text: "关闭",
         callback(toast: any) {
