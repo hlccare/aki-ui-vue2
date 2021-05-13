@@ -145,6 +145,26 @@
     <div class="box">
       <button @click="showToast">点击</button>
     </div>
+    <div class="box">
+      <Tabs :selected.sync="selectedTab">
+        <TabsHead>
+          <template slot="actions">
+            <button>设置</button>
+          </template>
+          <TabsItem name="people" disabled>
+            <Icon iconName="setting" />
+            people</TabsItem
+          >
+          <TabsItem name="finance">finance</TabsItem>
+          <TabsItem name="sports">sports</TabsItem>
+        </TabsHead>
+        <TabsBody>
+          <TabsPanel name="people">people</TabsPanel>
+          <TabsPanel name="finance">finance</TabsPanel>
+          <TabsPanel name="sports">sports</TabsPanel>
+        </TabsBody>
+      </Tabs>
+    </div>
   </div>
 </template>
 
@@ -162,6 +182,14 @@ import Footer from "../components/Footer.vue";
 import Sider from "../components/Sider.vue";
 import Toast from "../components/Toast.vue";
 import plugin from "../components/plugin";
+import Tabs from "../components/Tabs.vue";
+import TabsBody from "../components/TabsBody.vue";
+import TabsHead from "../components/TabsHead.vue";
+import TabsItem from "../components/TabsItem.vue";
+import TabsPanel from "../components/TabsPanel.vue";
+import Icon from "../components/Icon.vue";
+import Icon from "@/components/Icon.vue";
+
 Vue.use(plugin);
 
 @Component({
@@ -177,6 +205,12 @@ Vue.use(plugin);
     Footer,
     Sider,
     Toast,
+    Tabs,
+    TabsBody,
+    TabsHead,
+    TabsItem,
+    TabsPanel,
+    Icon,
   },
 })
 export default class Home extends Vue {
