@@ -102,7 +102,6 @@
       <Row gutter="20">
         <Col>1</Col>
         <Col>2</Col>
-        <Col>3</Col>
       </Row>
       <Row gutter="20">
         <Col>1</Col>
@@ -115,8 +114,8 @@
         <Col span="20" offset="2">11</Col>
       </Row>
       <Row gutter="20">
-        <Col span="4">1</Col>
-        <Col span="20">11</Col>
+        <Col span="4">4</Col>
+        <Col span="20">20</Col>
       </Row>
       <Row gutter="20">
         <Col span="4">1</Col>
@@ -133,6 +132,16 @@
         <Col span="8" offset="2">11</Col>
       </Row>
     </div>
+    <div class="box">
+      <Layout>
+        <Sider class="demo">sider</Sider>
+        <Layout>
+          <Header class="demo">header</Header>
+          <Content class="demo">content</Content>
+          <Footer class="demo">footer</Footer>
+        </Layout>
+      </Layout>
+    </div>
   </div>
 </template>
 
@@ -143,9 +152,25 @@ import ButtonGroup from "../components/ButtonGroup.vue";
 import Input from "../components/Input.vue";
 import Row from "../components/Row.vue";
 import Col from "../components/Col.vue";
+import Layout from "../components/Layout.vue";
+import Header from "../components/Header.vue";
+import Content from "../components/Content.vue";
+import Footer from "../components/Footer.vue";
+import Sider from "../components/Sider.vue";
 
 @Component({
-  components: { Button, ButtonGroup, Input, Row, Col },
+  components: {
+    Button,
+    ButtonGroup,
+    Input,
+    Row,
+    Col,
+    Layout,
+    Header,
+    Content,
+    Footer,
+    Sider,
+  },
 })
 export default class Home extends Vue {
   data() {
@@ -163,7 +188,10 @@ export default class Home extends Vue {
 .home {
   padding: 20px;
   > .box {
-    padding: 10px;
+    .demo {
+      min-height: 100px;
+      border: 1px solid orange;
+    }
   }
 }
 </style>
